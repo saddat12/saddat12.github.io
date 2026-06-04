@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saddat IGODO — Développeur Full-Stack</title>
+<meta name="description" content="Portfolio de Mohamed Saddat IGODO, développeur Full-Stack (Flutter, Laravel) basé à Lomé, Togo.">
+<style>
+  :root{
+    --bg:#0f1620;
+    --bg-soft:#16202c;
+    --card:#1b2735;
+    --line:#26323f;
+    --ink:#e9eef3;
+    --muted:#9aa7b4;
+    --accent:#3b82f6;       /* bleu */
+    --accent-2:#22d3a5;     /* teal */
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+    line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
+  .accent{color:var(--accent);}
+
+  /* ---------- NAV ---------- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(15,22,32,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;}
+  .logo{font-weight:800;letter-spacing:.5px;}
+  .logo span{color:var(--accent);}
+  .navlinks{display:flex;gap:26px;font-size:14px;color:var(--muted);}
+  .navlinks a:hover{color:var(--ink);}
+  @media(max-width:680px){.navlinks{display:none;}}
+
+  /* ---------- HERO ---------- */
+  header{padding:72px 0 56px;border-bottom:1px solid var(--line);
+    background:radial-gradient(900px 380px at 78% -8%,rgba(59,130,246,.16),transparent 60%);}
+  .hero{display:grid;grid-template-columns:1fr 200px;gap:40px;align-items:center;}
+  .eyebrow{color:var(--accent);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px;}
+  .hero h1{font-size:44px;line-height:1.1;margin:10px 0 8px;font-weight:800;}
+  .hero h2{font-size:19px;color:var(--muted);font-weight:500;margin-bottom:18px;}
+  .hero p{color:var(--muted);max-width:560px;margin-bottom:26px;}
+  .photo{width:180px;height:180px;border-radius:50%;justify-self:end;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;align-items:center;justify-content:center;font-size:54px;font-weight:800;color:#fff;
+    overflow:hidden;border:4px solid var(--card);box-shadow:0 18px 40px rgba(0,0,0,.4);}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;font-size:14.5px;transition:.18s;border:1px solid transparent;}
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px);}
+  .btn-ghost{border-color:var(--line);color:var(--ink);background:var(--bg-soft);}
+  .btn-ghost:hover{border-color:var(--accent);}
+  @media(max-width:680px){
+    .hero{grid-template-columns:1fr;}
+    .photo{justify-self:start;width:128px;height:128px;font-size:40px;order:-1;}
+    .hero h1{font-size:34px;}
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:58px 0;border-bottom:1px solid var(--line);}
+  .sec-head{margin-bottom:30px;}
+  .sec-head .k{color:var(--accent);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;}
+  .sec-head h3{font-size:28px;font-weight:800;margin-top:4px;}
+
+  /* skills */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{background:var(--card);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:14px;color:var(--ink);}
+  .chip b{color:var(--accent);}
+  .learn{margin-top:16px;color:var(--muted);font-size:14px;}
+
+  /* cards grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;transition:.18s;}
+  .card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 14px 34px rgba(0,0,0,.35);}
+  .card .badge{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#fff;margin-bottom:14px;}
+  .card h4{font-size:17px;margin-bottom:6px;}
+  .card .role{font-size:12.5px;color:var(--accent-2);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
+  .card p{color:var(--muted);font-size:14px;flex:1;}
+  .card .tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0;}
+  .card .tags span{font-size:11px;color:var(--muted);background:var(--bg-soft);border:1px solid var(--line);padding:2px 8px;border-radius:6px;}
+  .card .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;}
+  .card .links a{font-size:13px;font-weight:600;color:var(--accent);border-bottom:1px solid transparent;}
+  .card .links a:hover{border-color:var(--accent);}
+  .muted-link{color:var(--muted)!important;}
+
+  /* experience */
+  .xp{border-left:2px solid var(--line);padding-left:22px;}
+  .xp .item{position:relative;padding-bottom:26px;}
+  .xp .item::before{content:"";position:absolute;left:-29px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+  .xp h4{font-size:17px;}
+  .xp .when{color:var(--muted);font-size:13px;margin:2px 0 8px;}
+  .xp p{color:var(--muted);font-size:14.5px;}
+
+  /* contact */
+  .contact{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px;}
+
+  .url{word-break:break-all;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Saddat <span>IGODO</span></div>
+    <div class="navlinks">
+      <a href="#apps">Applications</a>
+      <a href="#web">Projets web</a>
+      <a href="#skills">Compétences</a>
+      <a href="#xp">Parcours</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header>
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Développeur Full-Stack</div>
+      <h1>Mohamed Saddat <span class="accent">IGODO</span></h1>
+      <h2>Mobile (Flutter) · Web &amp; Backend (Laravel / PHP) · API REST</h2>
+      <p>
+        Développeur basé à Lomé, je conçois et fais évoluer des applications en production —
+        super-apps multi-services, solutions <b>fintech (Mobile Money)</b> et plateformes web.
+        Du front mobile/web jusqu'à l'intégration back-end et des API REST.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#apps">Voir mes réalisations</a>
+        <a class="btn btn-ghost" href="CV_IGODO_Saddat.pdf" download>⬇ Télécharger mon CV</a>
+      </div>
+    </div>
+    <div class="photo"><img src="photo.jpg" alt="Mohamed Saddat IGODO"></div>
+  </div>
+</header>
+
+<!-- ===================== APPLICATIONS ===================== -->
+<section id="apps">
+  <div class="wrap">
+    <div class="sec-head"><div class="k">Publiées sur les stores</div><h3>Applications mobiles</h3></div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="badge" style="background:#f97316">M</div>
+        <h4>MonKapi</h4>
+        <div class="role">Super-app multi-services</div>
+        <p>Application de transport/VTC, livraison, e-food, e-commerce et prise de rendez-vous salon, avec carte interactive, suivi en temps réel et tarification dynamique.</p>
+        <div class="tags"><span>Flutter</span><span>Google Maps</span><span>Temps réel</span></div>
+        <div class="links"><a href="https://play.google.com/store/apps/details?id=com.togo.user">Google Play ↗</a></div>
+      </div>
+
+      <div class="card">
+        <div class="badge" style="background:#ea580c">P</div>
+        <h4>MonKapi Pro / Merchant</h4>
+        <div class="role">App professionnels</div>
+        <p>Application dédiée aux prestataires pour la gestion de services sur rendez-vous (salons, artisanat…) et le suivi de leur activité.</p>
+        <div class="tags"><span>Flutter</span></div>
+        <div class="links"><a href="https://play.google.com/store/apps/details?id=com.monkapi_merchant">Google Play ↗</a></div>
+      </div>
+
+      <div class="card">
+        <div class="badge" style="background:#16a34a">T</div>
+        <h4>TamTamCash</h4>
+        <div class="role">Mobile Money · 2 apps</div>
+        <p>Écosystème de paiement : app grand public (wallet, transfert P2P, retrait, paiement par QR code, KYC &amp; biométrie) et app agent/agence (cash-in/out, gestion d'agents).</p>
+        <div class="tags"><span>Flutter</span><span>API paiement</span><span>QR code</span></div>
+        <div class="links"><span class="muted-link" style="font-size:13px">Sur les stores</span></div>
+      </div>
+
+      <div class="card">
+        <div class="badge" style="background:#2563eb">Y</div>
+        <h4>You</h4>
+        <div class="role">App clients</div>
+        <p>Application mobile grand public de l'écosystème Youaps (services à la demande).</p>
+        <div class="tags"><span>Flutter</span></div>
+        <div class="links"><a href="https://play.google.com/store/apps/details?id=com.cyberdix.you">Google Play ↗</a></div>
+      </div>
+
+      <div class="card">
+        <div class="badge" style="background:#1d4ed8">Y</div>
+        <h4>You Pro</h4>
+        <div class="role">App prestataires</div>
+        <p>Application dédiée aux prestataires de services de la plateforme Youaps.</p>
+        <div class="tags"><span>Flutter</span></div>
+        <div class="links"><a href="https://play.google.com/store/apps/details?id=com.cyberdix.youpro">Google Play ↗</a></div>
+      </div>
+
+      <div class="card">
+        <div class="badge" style="background:#7c3aed">S</div>
+        <h4>Ticket Scanner</h4>
+        <div class="role">Contrôle d'accès événementiel</div>
+        <p>Validation de billets par QR code en temps réel, détection anti-fraude des doubles entrées et statistiques de scan pour le staff d'événements.</p>
+        <div class="tags"><span>Flutter</span><span>QR code</span></div>
+        <div class="links"><span class="muted-link" style="font-size:13px">Application interne</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJETS WEB ===================== -->
+<section id="web">
+  <div class="wrap">
+    <div class="sec-head"><div class="k">En ligne</div><h3>Projets web &amp; back-end</h3></div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="badge" style="background:#0ea5e9">SH</div>
+        <h4>Stay High</h4>
+        <div class="role">Plateforme de tournois</div>
+        <p>Gestion de tournois de streetball : tirage au sort, brackets, statistiques et classements. Back-end Laravel + API, déployé en production.</p>
+        <div class="tags"><span>Laravel</span><span>API REST</span><span>MySQL</span><span>Déploiement</span></div>
+        <div class="links"><a class="url" href="https://app.stayhigh.africa">app.stayhigh.africa ↗</a></div>
+      </div>
+
+      <div class="card">
+        <div class="badge" style="background:#0d9488">GB</div>
+        <h4>Gestion Bulletin — ESIBA</h4>
+        <div class="role">Plateforme scolaire</div>
+        <p>Gestion des bulletins (saisie de notes, génération PDF, imports/exports, emplois du temps), avec API REST et application mobile Flutter pour l'espace étudiant.</p>
+        <div class="tags"><span>Laravel</span><span>API REST</span><span>Flutter</span><span>MySQL</span></div>
+        <div class="links"><a class="url" href="https://bulletin.esiba.tg">bulletin.esiba.tg ↗</a></div>
+      </div>
+
+      <div class="card">
+        <div class="badge" style="background:#b45309">C</div>
+        <h4>Canapé Shop &amp; Location véhicules</h4>
+        <div class="role">E-commerce</div>
+        <p>Sites de commande en ligne : catalogue produits, panier et gestion des commandes.</p>
+        <div class="tags"><span>Laravel</span><span>Blade</span></div>
+        <div class="links"><span class="muted-link" style="font-size:13px">Démo sur demande</span></div>
+      </div>
+
+      <div class="card">
+        <div class="badge" style="background:#db2777">CY</div>
+        <h4>Chopper's Yogurt</h4>
+        <div class="role">Site vitrine premium</div>
+        <p>Landing page one-page soignée (design moderne, animations) pour une marque de yaourt.</p>
+        <div class="tags"><span>HTML / CSS</span></div>
+        <div class="links"><span class="muted-link" style="font-size:13px">Démo sur demande</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMPÉTENCES ===================== -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><div class="k">Stack technique</div><h3>Compétences</h3></div>
+    <div class="chips">
+      <span class="chip"><b>Flutter</b> / Dart</span>
+      <span class="chip"><b>JavaScript</b> / HTML / CSS</span>
+      <span class="chip"><b>PHP</b> / Laravel</span>
+      <span class="chip">API <b>REST</b></span>
+      <span class="chip">API de <b>paiement</b></span>
+      <span class="chip"><b>MySQL</b> / MariaDB</span>
+      <span class="chip"><b>Docker</b></span>
+      <span class="chip"><b>Google Cloud</b></span>
+      <span class="chip"><b>Firebase</b></span>
+      <span class="chip">WebSocket / temps réel</span>
+      <span class="chip">Google Maps / Géoloc</span>
+      <span class="chip">Git / GitHub</span>
+      <span class="chip">Publication Play / App Store</span>
+    </div>
+    <div class="learn">🌱 En cours d'apprentissage : Node.js / TypeScript · architecture microservices · CI/CD · Nginx</div>
+  </div>
+</section>
+
+<!-- ===================== PARCOURS ===================== -->
+<section id="xp">
+  <div class="wrap">
+    <div class="sec-head"><div class="k">Expériences</div><h3>Parcours professionnel</h3></div>
+    <div class="xp">
+      <div class="item">
+        <h4>Développeur d'applications — 2GO SARL</h4>
+        <div class="when">Février 2024 – Mai 2026 · Lomé</div>
+        <p>Évolution et maintenance de la super-app MonKapi (produit en production), développement de MonKapi Pro, de l'écosystème TamTamCash (Mobile Money) et de Ticket Scanner. Publication sur les stores.</p>
+      </div>
+      <div class="item">
+        <h4>Développeur Full-Stack — Cyberdix / Youaps</h4>
+        <div class="when">Mai 2022 – Décembre 2023</div>
+        <p>Développement web et back-end (PHP), conception des applications mobiles You, You Pro et You Commercial (Flutter).</p>
+      </div>
+      <div class="item">
+        <h4>Stagiaire développeur — Markom Business Solutions</h4>
+        <div class="when">Juillet 2021 – Avril 2022</div>
+        <p>Sites de gestion et applications web (Laravel), mise à jour du site officiel de l'entreprise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head"><div class="k">Disponible</div><h3>Me contacter</h3></div>
+    <div class="contact">
+      <a class="btn btn-primary" href="mailto:saddatigd@gmail.com">✉ saddatigd@gmail.com</a>
+      <a class="btn btn-ghost" href="https://wa.me/22870467017">💬 WhatsApp +228 70 46 70 17</a>
+      <a class="btn btn-ghost" href="CV_IGODO_Saddat.pdf" download>⬇ Mon CV (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Mohamed Saddat IGODO — Développeur Full-Stack · Lomé, Togo
+</footer>
+
+</body>
+</html>
