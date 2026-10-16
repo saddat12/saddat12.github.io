@@ -185,7 +185,7 @@
         </p>
         <div class="cta">
           <a class="btn btn-primary" href="#work" data-i18n="cta-work">Voir les réalisations</a>
-          <a class="btn btn-ghost" href="CV_IGODO_Saddat.pdf" download data-i18n="cta-cv">Télécharger le CV</a>
+          <a class="btn btn-ghost" href="CV_IGODO_Saddat.pdf" download data-i18n="cta-cv" data-cv-link>Télécharger le CV</a>
         </div>
         <div class="stats">
           <div class="stat"><b data-i18n="stat1-num">5+ ans</b><span data-i18n="stat1-label">d'expérience</span></div>
@@ -433,7 +433,7 @@
       <a class="btn btn-primary" href="mailto:saddatigd@gmail.com">saddatigd@gmail.com</a>
       <a class="btn btn-ghost" href="https://wa.me/22870467017" target="_blank" rel="noopener">WhatsApp +228 70 46 70 17</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/saddat-igodo-44895b229" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn btn-ghost" href="CV_IGODO_Saddat.pdf" download data-i18n="contact-cv">CV (PDF)</a>
+      <a class="btn btn-ghost" href="CV_IGODO_Saddat.pdf" download data-i18n="contact-cv" data-cv-link>CV (PDF)</a>
     </div>
   </div>
 </section>
@@ -588,6 +588,9 @@
     document.querySelectorAll('[data-i18n]').forEach(function(el){
       var entry = I18N[el.getAttribute('data-i18n')];
       if (entry) el.innerHTML = entry[lang];
+    });
+    document.querySelectorAll('[data-cv-link]').forEach(function(el){
+      el.setAttribute('href', lang === 'en' ? 'CV_IGODO_Saddat_EN.pdf' : 'CV_IGODO_Saddat.pdf');
     });
     var btn = document.getElementById('lang-toggle');
     if (btn) {
