@@ -41,12 +41,16 @@
   nav{position:sticky;top:0;z-index:50;background:rgba(12,19,16,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
   .logo{font-family:'Unbounded',sans-serif;font-weight:700;font-size:15px;letter-spacing:.3px;}
-  .navlinks{display:flex;align-items:center;gap:28px;font-size:14px;color:var(--muted);}
+  .navlinks{display:flex;align-items:center;gap:18px;font-size:14px;color:var(--muted);}
   .navlinks a{transition:color .15s;}
   .navlinks a:hover{color:var(--ink);}
   .navlinks .nav-cta{color:var(--bg);background:var(--gold);padding:9px 16px;border-radius:9px;font-weight:700;}
   .navlinks .nav-cta:hover{color:var(--bg);filter:brightness(1.08);}
-  @media(max-width:760px){.navlinks a:not(.nav-cta){display:none;}}
+  .nav-lang{border:1px solid var(--line);color:var(--muted);font-size:12.5px;font-weight:700;
+    padding:7px 11px;border-radius:7px;background:transparent;cursor:pointer;font-family:'Manrope',sans-serif;
+    transition:.15s;}
+  .nav-lang:hover{color:var(--ink);border-color:var(--mint);}
+  @media(max-width:760px){.navlinks a:not(.nav-cta):not(.nav-lang){display:none;}}
 
   /* ---------- HERO ---------- */
   header{padding:64px 0 0;}
@@ -156,10 +160,11 @@
   <div class="wrap">
     <div class="logo">Saddat IGODO</div>
     <div class="navlinks">
-      <a href="#work">Réalisations</a>
-      <a href="#stack">Compétences</a>
-      <a href="#xp">Parcours</a>
-      <a class="nav-cta" href="#contact">Me contacter</a>
+      <a href="#work" data-i18n="nav-work">Réalisations</a>
+      <a href="#stack" data-i18n="nav-stack">Compétences</a>
+      <a href="#xp" data-i18n="nav-xp">Parcours</a>
+      <a class="nav-cta" href="#contact" data-i18n="nav-contact">Me contacter</a>
+      <button id="lang-toggle" class="nav-lang" type="button" aria-label="Switch to English">EN</button>
     </div>
   </div>
 </nav>
@@ -167,31 +172,31 @@
 <!-- ===================== HERO ===================== -->
 <header>
   <div class="wrap">
-    <span class="status"><span class="dot"></span> Présentiel à Lomé ou en freelance</span>
+    <span class="status"><span class="dot"></span> <span data-i18n="hero-status">Présentiel à Lomé ou en freelance</span></span>
 
     <div class="hero">
       <div>
         <h1>Mohamed Saddat IGODO</h1>
-        <p class="role">Développeur full-stack — <b>Flutter</b> en mobile, <b>Laravel</b> en back-end.</p>
-        <p class="lede">
+        <p class="role" data-i18n="hero-role">Développeur full-stack — <b>Flutter</b> en mobile, <b>Laravel</b> en back-end.</p>
+        <p class="lede" data-i18n="hero-lede">
           Je conçois et fais évoluer des applications en production au Togo : une super-app multi-services,
           deux écosystèmes de paiement mobile et plusieurs plateformes web, du front mobile jusqu'aux API
           et à la base de données.
         </p>
         <div class="cta">
-          <a class="btn btn-primary" href="#work">Voir les réalisations</a>
-          <a class="btn btn-ghost" href="CV_IGODO_Saddat.pdf" download>Télécharger le CV</a>
+          <a class="btn btn-primary" href="#work" data-i18n="cta-work">Voir les réalisations</a>
+          <a class="btn btn-ghost" href="CV_IGODO_Saddat.pdf" download data-i18n="cta-cv">Télécharger le CV</a>
         </div>
         <div class="stats">
-          <div class="stat"><b>5+ ans</b><span>d'expérience</span></div>
-          <div class="stat"><b>4</b><span>apps sur Google Play</span></div>
-          <div class="stat"><b>11</b><span>réalisations en production</span></div>
+          <div class="stat"><b data-i18n="stat1-num">5+ ans</b><span data-i18n="stat1-label">d'expérience</span></div>
+          <div class="stat"><b>4</b><span data-i18n="stat2-label">apps sur Google Play</span></div>
+          <div class="stat"><b>11</b><span data-i18n="stat3-label">réalisations en production</span></div>
         </div>
       </div>
 
       <div class="portrait">
         <div class="frame"><img src="photo.jpg" alt="Mohamed Saddat IGODO"></div>
-        <div class="tag"><b>Lomé, Togo</b>Français · Anglais technique</div>
+        <div class="tag" data-i18n="portrait-tag"><b>Lomé, Togo</b>Français · Anglais technique</div>
       </div>
     </div>
   </div>
@@ -208,16 +213,16 @@
 <section id="work">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Réalisations</h2>
-      <p>Apps publiées, écosystèmes fintech et plateformes web — en production, pas des maquettes.</p>
+      <h2 data-i18n="work-h2">Réalisations</h2>
+      <p data-i18n="work-p">Apps publiées, écosystèmes fintech et plateformes web — en production, pas des maquettes.</p>
     </div>
 
     <div class="filters">
-      <button class="active" data-filter="all">Tout</button>
-      <button data-filter="mobile">Mobile</button>
-      <button data-filter="web">Web</button>
-      <button data-filter="fintech">Fintech</button>
-      <button data-filter="education">Éducation</button>
+      <button class="active" data-filter="all" data-i18n="filter-all">Tout</button>
+      <button data-filter="mobile" data-i18n="filter-mobile">Mobile</button>
+      <button data-filter="web" data-i18n="filter-web">Web</button>
+      <button data-filter="fintech" data-i18n="filter-fintech">Fintech</button>
+      <button data-filter="education" data-i18n="filter-education">Éducation</button>
     </div>
 
     <div class="grid" id="work-grid">
@@ -225,32 +230,32 @@
       <div class="card" data-cat="mobile">
         <div class="top">
           <div class="icon" style="background:#f0a94e">M</div>
-          <div><h3>MonKapi</h3><div class="role">Super-app multi-services</div></div>
+          <div><h3>MonKapi</h3><div class="role" data-i18n="c1-role">Super-app multi-services</div></div>
         </div>
-        <p>Transport/VTC à tarification dynamique, livraison, e-food, e-commerce, pressing, pharmacie et
+        <p data-i18n="c1-desc">Transport/VTC à tarification dynamique, livraison, e-food, e-commerce, pressing, pharmacie et
           réservation en salon de beauté, avec carte interactive, suivi en temps réel et thème clair/sombre
           unifié sur plus de dix modules.</p>
-        <div class="tags"><span>Flutter</span><span>Google Maps</span><span>Temps réel</span></div>
+        <div class="tags"><span>Flutter</span><span>Google Maps</span><span data-i18n="c1-tag3">Temps réel</span></div>
         <a class="link" href="https://play.google.com/store/apps/details?id=com.togo.user" target="_blank" rel="noopener">Google Play</a>
       </div>
 
       <div class="card" data-cat="mobile">
         <div class="top">
           <div class="icon" style="background:#e3c23a">K</div>
-          <div><h3>KapiMarket</h3><div class="role">Petites annonces</div></div>
+          <div><h3>KapiMarket</h3><div class="role" data-i18n="c2-role">Petites annonces</div></div>
         </div>
-        <p>Module de petites annonces construit de zéro au sein de MonKapi : dépôt à champs dynamiques et
+        <p data-i18n="c2-desc">Module de petites annonces construit de zéro au sein de MonKapi : dépôt à champs dynamiques et
           jusqu'à dix photos, recherche par catégories, chat et négociation acheteur/vendeur, avis vendeurs.</p>
-        <div class="tags"><span>Flutter</span><span>Chat temps réel</span></div>
-        <a class="link muted">Module dans l'app MonKapi</a>
+        <div class="tags"><span>Flutter</span><span data-i18n="c2-tag2">Chat temps réel</span></div>
+        <a class="link muted" data-i18n="c2-link">Module dans l'app MonKapi</a>
       </div>
 
       <div class="card" data-cat="mobile">
         <div class="top">
           <div class="icon" style="background:#e08a3c">P</div>
-          <div><h3>MonKapi Merchant</h3><div class="role">App professionnels</div></div>
+          <div><h3>MonKapi Merchant</h3><div class="role" data-i18n="c3-role">App professionnels</div></div>
         </div>
-        <p>Application dédiée aux commerçants et prestataires : catalogue (produits, prestations, variantes,
+        <p data-i18n="c3-desc">Application dédiée aux commerçants et prestataires : catalogue (produits, prestations, variantes,
           remises, stock), agenda des rendez-vous, assignation des livraisons, tableau de bord des ventes,
           interface bilingue français/anglais.</p>
         <div class="tags"><span>Flutter</span><span>Firebase (FCM)</span></div>
@@ -262,18 +267,18 @@
           <div class="icon" style="background:#49d6a8">T</div>
           <div><h3>TamTamCash</h3><div class="role">Mobile Money · 2 apps</div></div>
         </div>
-        <p>Écosystème de paiement : app grand public (wallet, transfert P2P, retrait, paiement par QR code,
+        <p data-i18n="c4-desc">Écosystème de paiement : app grand public (wallet, transfert P2P, retrait, paiement par QR code,
           KYC et biométrie) et app agent/agence (cash-in/out, gestion d'agents).</p>
-        <div class="tags"><span>Flutter</span><span>API de paiement</span><span>QR code</span></div>
-        <a class="link muted">Sur les stores</a>
+        <div class="tags"><span>Flutter</span><span data-i18n="c4-tag2">API de paiement</span><span>QR code</span></div>
+        <a class="link muted" data-i18n="c4-link">Sur les stores</a>
       </div>
 
       <div class="card" data-cat="mobile">
         <div class="top">
           <div class="icon" style="background:#3f7ae0">Y</div>
-          <div><h3>You</h3><div class="role">App clients</div></div>
+          <div><h3>You</h3><div class="role" data-i18n="c5-role">App clients</div></div>
         </div>
-        <p>Application mobile grand public de l'écosystème Youaps, pour la réservation de services à la demande.</p>
+        <p data-i18n="c5-desc">Application mobile grand public de l'écosystème Youaps, pour la réservation de services à la demande.</p>
         <div class="tags"><span>Flutter</span></div>
         <a class="link" href="https://play.google.com/store/apps/details?id=com.cyberdix.you" target="_blank" rel="noopener">Google Play</a>
       </div>
@@ -281,9 +286,9 @@
       <div class="card" data-cat="mobile">
         <div class="top">
           <div class="icon" style="background:#2f5bc7">Y</div>
-          <div><h3>You Pro</h3><div class="role">App prestataires</div></div>
+          <div><h3>You Pro</h3><div class="role" data-i18n="c6-role">App prestataires</div></div>
         </div>
-        <p>Application dédiée aux prestataires de services de la plateforme Youaps.</p>
+        <p data-i18n="c6-desc">Application dédiée aux prestataires de services de la plateforme Youaps.</p>
         <div class="tags"><span>Flutter</span></div>
         <a class="link" href="https://play.google.com/store/apps/details?id=com.cyberdix.youpro" target="_blank" rel="noopener">Google Play</a>
       </div>
@@ -291,20 +296,20 @@
       <div class="card" data-cat="mobile">
         <div class="top">
           <div class="icon" style="background:#9c6ae0">S</div>
-          <div><h3>Ticket Scanner</h3><div class="role">Contrôle d'accès événementiel</div></div>
+          <div><h3>Ticket Scanner</h3><div class="role" data-i18n="c7-role">Contrôle d'accès événementiel</div></div>
         </div>
-        <p>Validation de billets par QR code en temps réel, détection des doubles entrées et statistiques
+        <p data-i18n="c7-desc">Validation de billets par QR code en temps réel, détection des doubles entrées et statistiques
           de scan pour le staff d'événements.</p>
         <div class="tags"><span>Flutter</span><span>QR code</span></div>
-        <a class="link muted">Application interne</a>
+        <a class="link muted" data-i18n="c7-link">Application interne</a>
       </div>
 
       <div class="card" data-cat="web">
         <div class="top">
           <div class="icon" style="background:#4ba7e0">SH</div>
-          <div><h3>Stay High</h3><div class="role">Plateforme de tournois</div></div>
+          <div><h3>Stay High</h3><div class="role" data-i18n="c8-role">Plateforme de tournois</div></div>
         </div>
-        <p>Gestion de tournois de streetball : tirage au sort, brackets, statistiques et classements.
+        <p data-i18n="c8-desc">Gestion de tournois de streetball : tirage au sort, brackets, statistiques et classements.
           Back-end Laravel et API, déployé en production.</p>
         <div class="tags"><span>Laravel</span><span>API REST</span><span>MySQL</span></div>
         <a class="link" href="https://stayhigh.africa" target="_blank" rel="noopener">stayhigh.africa</a>
@@ -313,9 +318,9 @@
       <div class="card" data-cat="web education">
         <div class="top">
           <div class="icon" style="background:#3bb393">GB</div>
-          <div><h3>Gestion Bulletin · ESIBA</h3><div class="role">Plateforme scolaire</div></div>
+          <div><h3>Gestion Bulletin · ESIBA</h3><div class="role" data-i18n="c9-role">Plateforme scolaire</div></div>
         </div>
-        <p>Gestion des bulletins (saisie de notes, génération PDF, imports/exports, emplois du temps),
+        <p data-i18n="c9-desc">Gestion des bulletins (saisie de notes, génération PDF, imports/exports, emplois du temps),
           avec API REST et application mobile Flutter pour l'espace étudiant.</p>
         <div class="tags"><span>Laravel</span><span>API REST</span><span>Flutter</span></div>
         <a class="link" href="https://bulletin.esiba.tg" target="_blank" rel="noopener">bulletin.esiba.tg</a>
@@ -326,19 +331,19 @@
           <div class="icon" style="background:#c48a3f">C</div>
           <div><h3>Canapé Shop &amp; Location véhicules</h3><div class="role">E-commerce</div></div>
         </div>
-        <p>Sites de commande en ligne : catalogue produits, panier et gestion des commandes.</p>
+        <p data-i18n="c10-desc">Sites de commande en ligne : catalogue produits, panier et gestion des commandes.</p>
         <div class="tags"><span>Laravel</span><span>Blade</span></div>
-        <a class="link muted">Démo sur demande</a>
+        <a class="link muted" data-i18n="c10-link">Démo sur demande</a>
       </div>
 
       <div class="card" data-cat="web">
         <div class="top">
           <div class="icon" style="background:#d9638f">CY</div>
-          <div><h3>Chopper's Yogurt</h3><div class="role">Site vitrine</div></div>
+          <div><h3>Chopper's Yogurt</h3><div class="role" data-i18n="c11-role">Site vitrine</div></div>
         </div>
-        <p>Landing page one-page pour une marque de yaourt, design soigné et animations.</p>
+        <p data-i18n="c11-desc">Landing page one-page pour une marque de yaourt, design soigné et animations.</p>
         <div class="tags"><span>HTML</span><span>CSS</span></div>
-        <a class="link muted">Démo sur demande</a>
+        <a class="link muted" data-i18n="c11-link">Démo sur demande</a>
       </div>
 
     </div>
@@ -349,20 +354,20 @@
 <section id="stack">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Compétences</h2>
-      <p>La stack que j'utilise au quotidien, couche par couche.</p>
+      <h2 data-i18n="stack-h2">Compétences</h2>
+      <p data-i18n="stack-p">La stack que j'utilise au quotidien, couche par couche.</p>
     </div>
     <div class="stack">
       <div class="stack-row" style="--row-color:#e3a542;">
         <div class="layer">Mobile</div>
-        <div class="items"><b>Flutter</b>, Dart, architecture en packages, publication Google Play Store et App Store.</div>
+        <div class="items" data-i18n="items1"><b>Flutter</b>, Dart, architecture en packages, publication Google Play Store et App Store.</div>
       </div>
       <div class="stack-row" style="--row-color:#49d6a8;">
-        <div class="layer">Back-end &amp; API</div>
-        <div class="items"><b>PHP</b>, <b>Laravel</b>, conception et intégration d'API REST, intégration d'API de paiement (Mobile Money).</div>
+        <div class="layer" data-i18n="layer2">Back-end &amp; API</div>
+        <div class="items" data-i18n="items2"><b>PHP</b>, <b>Laravel</b>, conception et intégration d'API REST, intégration d'API de paiement (Mobile Money).</div>
       </div>
       <div class="stack-row" style="--row-color:#4ba7e0;">
-        <div class="layer">Données</div>
+        <div class="layer" data-i18n="layer3">Données</div>
         <div class="items">MySQL, MariaDB.</div>
       </div>
       <div class="stack-row" style="--row-color:#9c6ae0;">
@@ -370,15 +375,15 @@
         <div class="items">Docker, Google Cloud Platform, Git, GitHub.</div>
       </div>
       <div class="stack-row" style="--row-color:#d9638f;">
-        <div class="layer">Fonctionnalités avancées</div>
-        <div class="items">Google Maps et géolocalisation, temps réel (WebSocket), Firebase, notifications push, paiement et QR code.</div>
+        <div class="layer" data-i18n="layer5">Fonctionnalités avancées</div>
+        <div class="items" data-i18n="items5">Google Maps et géolocalisation, temps réel (WebSocket), Firebase, notifications push, paiement et QR code.</div>
       </div>
       <div class="stack-row" style="--row-color:#e38a42;">
-        <div class="layer">IA</div>
-        <div class="items">Développement assisté par IA avec <b>Claude Code</b> — génération et revue de code, refactoring, débogage, intégré au flux de travail quotidien.</div>
+        <div class="layer" data-i18n="layer6">IA</div>
+        <div class="items" data-i18n="items6">Développement assisté par IA avec <b>Claude Code</b> — génération et revue de code, refactoring, débogage, intégré au flux de travail quotidien.</div>
       </div>
       <div class="stack-row" style="--row-color:#3b4a40;">
-        <div class="layer">En montée en compétences</div>
+        <div class="layer" data-i18n="layer7">En montée en compétences</div>
         <div class="items">Node.js, TypeScript, React, architecture microservices, CI/CD, Nginx.</div>
       </div>
     </div>
@@ -389,12 +394,12 @@
 <section id="xp">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Parcours professionnel</h2>
+      <h2 data-i18n="xp-h2">Parcours professionnel</h2>
     </div>
     <div class="xp">
       <div class="item">
-        <div class="head"><h3>Développeur d'applications mobiles · 2GO SARL</h3><span class="when">Février 2024 – Septembre 2026 · Lomé</span></div>
-        <p>Évolution et maintenance de la super-app MonKapi en production ; conception de KapiMarket et du
+        <div class="head"><h3 data-i18n="job1-title">Développeur d'applications mobiles · 2GO SARL</h3><span class="when" data-i18n="job1-when">Février 2024 – Septembre 2026 · Lomé</span></div>
+        <p data-i18n="job1-desc">Évolution et maintenance de la super-app MonKapi en production ; conception de KapiMarket et du
           module de réservation en salon de beauté ; mise en place du portefeuille électronique, du
           programme de fidélité, des codes promo et de l'inscription sécurisée par OTP ; pilotage de la
           migration de l'app entière vers un thème clair/sombre unifié ; développement de l'écosystème
@@ -402,13 +407,13 @@
           les stores.</p>
       </div>
       <div class="item">
-        <div class="head"><h3>Développeur d'applications (web et mobile) · Cyberdix / Youaps</h3><span class="when">Juin 2022 – Janvier 2024</span></div>
-        <p>Développement back-end PHP et intégration pour le site Youaps ; conception des applications
+        <div class="head"><h3 data-i18n="job2-title">Développeur d'applications (web et mobile) · Cyberdix / Youaps</h3><span class="when" data-i18n="job2-when">Juin 2022 – Janvier 2024</span></div>
+        <p data-i18n="job2-desc">Développement back-end PHP et intégration pour le site Youaps ; conception des applications
           mobiles You, You Pro et You Commercial en Flutter.</p>
       </div>
       <div class="item">
-        <div class="head"><h3>Stagiaire développeur d'applications · Markom Business Solutions</h3><span class="when">Janvier – Avril 2022</span></div>
-        <p>Conception d'une plateforme de commerce électronique complète (catalogue, panier, tunnel de
+        <div class="head"><h3 data-i18n="job3-title">Stagiaire développeur d'applications · Markom Business Solutions</h3><span class="when" data-i18n="job3-when">Janvier – Avril 2022</span></div>
+        <p data-i18n="job3-desc">Conception d'une plateforme de commerce électronique complète (catalogue, panier, tunnel de
           commande, gestion du stock et de la facturation), architecturée en couches Repository/Service et
           testée automatiquement (PHPUnit), avec intégration de la passerelle de paiement PayGate
           (Mixx, Flooz).</p>
@@ -421,14 +426,14 @@
 <section id="contact" style="border-bottom:none;">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Me contacter</h2>
-      <p>Disponible en présentiel à Lomé ou à distance, pour une mission freelance ou un poste.</p>
+      <h2 data-i18n="contact-h2">Me contacter</h2>
+      <p data-i18n="contact-p">Disponible en présentiel à Lomé ou à distance, pour une mission freelance ou un poste.</p>
     </div>
     <div class="contact-row">
       <a class="btn btn-primary" href="mailto:saddatigd@gmail.com">saddatigd@gmail.com</a>
       <a class="btn btn-ghost" href="https://wa.me/22870467017" target="_blank" rel="noopener">WhatsApp +228 70 46 70 17</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/saddat-igodo-44895b229" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn btn-ghost" href="CV_IGODO_Saddat.pdf" download>CV (PDF)</a>
+      <a class="btn btn-ghost" href="CV_IGODO_Saddat.pdf" download data-i18n="contact-cv">CV (PDF)</a>
     </div>
   </div>
 </section>
@@ -454,6 +459,155 @@
       });
     });
   });
+</script>
+
+<script>
+  var I18N = {
+    'nav-work': {fr:'Réalisations', en:'Work'},
+    'nav-stack': {fr:'Compétences', en:'Skills'},
+    'nav-xp': {fr:'Parcours', en:'Experience'},
+    'nav-contact': {fr:'Me contacter', en:'Contact me'},
+
+    'hero-status': {fr:'Présentiel à Lomé ou en freelance', en:'On-site in Lomé or remote freelance'},
+    'hero-role': {fr:'Développeur full-stack — <b>Flutter</b> en mobile, <b>Laravel</b> en back-end.', en:'Full-stack developer — <b>Flutter</b> on mobile, <b>Laravel</b> on the back end.'},
+    'hero-lede': {
+      fr:"Je conçois et fais évoluer des applications en production au Togo : une super-app multi-services, deux écosystèmes de paiement mobile et plusieurs plateformes web, du front mobile jusqu'aux API et à la base de données.",
+      en:"I design and evolve production applications in Togo: a multi-service super-app, two mobile payment ecosystems, and several web platforms, from the mobile front end through the API down to the database."
+    },
+    'cta-work': {fr:'Voir les réalisations', en:'See the work'},
+    'cta-cv': {fr:'Télécharger le CV', en:'Download CV'},
+    'stat1-num': {fr:'5+ ans', en:'5+ yrs'},
+    'stat1-label': {fr:"d'expérience", en:'experience'},
+    'stat2-label': {fr:'apps sur Google Play', en:'apps on Google Play'},
+    'stat3-label': {fr:'réalisations en production', en:'shipped to production'},
+    'portrait-tag': {fr:'<b>Lomé, Togo</b>Français · Anglais technique', en:'<b>Lomé, Togo</b>French · Technical English'},
+
+    'work-h2': {fr:'Réalisations', en:'Work'},
+    'work-p': {fr:'Apps publiées, écosystèmes fintech et plateformes web — en production, pas des maquettes.', en:'Published apps, fintech ecosystems and web platforms — shipped to production, not mockups.'},
+    'filter-all': {fr:'Tout', en:'All'},
+    'filter-mobile': {fr:'Mobile', en:'Mobile'},
+    'filter-web': {fr:'Web', en:'Web'},
+    'filter-fintech': {fr:'Fintech', en:'Fintech'},
+    'filter-education': {fr:'Éducation', en:'Education'},
+
+    'c1-role': {fr:'Super-app multi-services', en:'Multi-service super-app'},
+    'c1-desc': {fr:"Transport/VTC à tarification dynamique, livraison, e-food, e-commerce, pressing, pharmacie et réservation en salon de beauté, avec carte interactive, suivi en temps réel et thème clair/sombre unifié sur plus de dix modules.",
+      en:"Ride-hailing with dynamic pricing, delivery, e-food, e-commerce, laundry, pharmacy and beauty-salon booking, with an interactive map, live tracking and a unified light/dark theme across more than ten modules."},
+    'c1-tag3': {fr:'Temps réel', en:'Real-time'},
+
+    'c2-role': {fr:'Petites annonces', en:'Classifieds'},
+    'c2-desc': {fr:"Module de petites annonces construit de zéro au sein de MonKapi : dépôt à champs dynamiques et jusqu'à dix photos, recherche par catégories, chat et négociation acheteur/vendeur, avis vendeurs.",
+      en:"Classifieds module built from scratch inside MonKapi: listings with dynamic fields and up to ten photos, category search, buyer/seller chat and negotiation, and seller reviews."},
+    'c2-tag2': {fr:'Chat temps réel', en:'Real-time chat'},
+    'c2-link': {fr:"Module dans l'app MonKapi", en:'Module inside the MonKapi app'},
+
+    'c3-role': {fr:'App professionnels', en:'Merchant app'},
+    'c3-desc': {fr:"Application dédiée aux commerçants et prestataires : catalogue (produits, prestations, variantes, remises, stock), agenda des rendez-vous, assignation des livraisons, tableau de bord des ventes, interface bilingue français/anglais.",
+      en:"App built for merchants and service providers: catalog (products, services, variants, discounts, stock), appointment calendar, delivery assignment, sales dashboard, and a bilingual French/English interface."},
+
+    'c4-desc': {fr:"Écosystème de paiement : app grand public (wallet, transfert P2P, retrait, paiement par QR code, KYC et biométrie) et app agent/agence (cash-in/out, gestion d'agents).",
+      en:"Payment ecosystem: a consumer app (wallet, P2P transfers, withdrawals, QR code payments, KYC and biometrics) and an agent/branch app (cash-in/out, agent management)."},
+    'c4-tag2': {fr:'API de paiement', en:'Payment API'},
+    'c4-link': {fr:'Sur les stores', en:'On the app stores'},
+
+    'c5-role': {fr:'App clients', en:'Customer app'},
+    'c5-desc': {fr:"Application mobile grand public de l'écosystème Youaps, pour la réservation de services à la demande.",
+      en:'Consumer app for the Youaps ecosystem, for booking on-demand services.'},
+
+    'c6-role': {fr:'App prestataires', en:'Provider app'},
+    'c6-desc': {fr:'Application dédiée aux prestataires de services de la plateforme Youaps.',
+      en:'App built for service providers on the Youaps platform.'},
+
+    'c7-role': {fr:"Contrôle d'accès événementiel", en:'Event access control'},
+    'c7-desc': {fr:'Validation de billets par QR code en temps réel, détection des doubles entrées et statistiques de scan pour le staff d\'événements.',
+      en:'Real-time QR code ticket validation, duplicate-entry detection and scan stats for event staff.'},
+    'c7-link': {fr:'Application interne', en:'Internal app'},
+
+    'c8-role': {fr:'Plateforme de tournois', en:'Tournament platform'},
+    'c8-desc': {fr:'Gestion de tournois de streetball : tirage au sort, brackets, statistiques et classements. Back-end Laravel et API, déployé en production.',
+      en:'Streetball tournament management: draws, brackets, stats and standings. Laravel back end and API, deployed in production.'},
+
+    'c9-role': {fr:'Plateforme scolaire', en:'School platform'},
+    'c9-desc': {fr:"Gestion des bulletins (saisie de notes, génération PDF, imports/exports, emplois du temps), avec API REST et application mobile Flutter pour l'espace étudiant.",
+      en:'Report-card management (grade entry, PDF generation, imports/exports, timetables), with a REST API and a Flutter mobile app for the student space.'},
+
+    'c10-desc': {fr:'Sites de commande en ligne : catalogue produits, panier et gestion des commandes.',
+      en:'Online ordering sites: product catalog, cart and order management.'},
+    'c10-link': {fr:'Démo sur demande', en:'Demo on request'},
+
+    'c11-role': {fr:'Site vitrine', en:'Showcase site'},
+    'c11-desc': {fr:'Landing page one-page pour une marque de yaourt, design soigné et animations.',
+      en:'One-page landing site for a yogurt brand, with polished design and animations.'},
+    'c11-link': {fr:'Démo sur demande', en:'Demo on request'},
+
+    'stack-h2': {fr:'Compétences', en:'Skills'},
+    'stack-p': {fr:"La stack que j'utilise au quotidien, couche par couche.", en:'The stack I use day to day, layer by layer.'},
+    'layer2': {fr:'Back-end &amp; API', en:'Backend &amp; API'},
+    'items1': {fr:"<b>Flutter</b>, Dart, architecture en packages, publication Google Play Store et App Store.",
+      en:'<b>Flutter</b>, Dart, package-based architecture, Google Play Store and App Store publishing.'},
+    'items2': {fr:"<b>PHP</b>, <b>Laravel</b>, conception et intégration d'API REST, intégration d'API de paiement (Mobile Money).",
+      en:'<b>PHP</b>, <b>Laravel</b>, REST API design and integration, payment API integration (Mobile Money).'},
+    'layer3': {fr:'Données', en:'Data'},
+    'layer5': {fr:'Fonctionnalités avancées', en:'Advanced features'},
+    'items5': {fr:'Google Maps et géolocalisation, temps réel (WebSocket), Firebase, notifications push, paiement et QR code.',
+      en:'Google Maps and geolocation, real-time (WebSocket), Firebase, push notifications, payments and QR codes.'},
+    'layer6': {fr:'IA', en:'AI'},
+    'items6': {fr:"Développement assisté par IA avec <b>Claude Code</b> — génération et revue de code, refactoring, débogage, intégré au flux de travail quotidien.",
+      en:'AI-assisted development with <b>Claude Code</b> — code generation and review, refactoring, debugging, built into the daily workflow.'},
+    'layer7': {fr:'En montée en compétences', en:'Currently learning'},
+
+    'xp-h2': {fr:'Parcours professionnel', en:'Professional experience'},
+    'job1-title': {fr:"Développeur d'applications mobiles · 2GO SARL", en:'Mobile App Developer · 2GO SARL'},
+    'job1-when': {fr:'Février 2024 – Septembre 2026 · Lomé', en:'February 2024 – September 2026 · Lomé'},
+    'job1-desc': {fr:"Évolution et maintenance de la super-app MonKapi en production ; conception de KapiMarket et du module de réservation en salon de beauté ; mise en place du portefeuille électronique, du programme de fidélité, des codes promo et de l'inscription sécurisée par OTP ; pilotage de la migration de l'app entière vers un thème clair/sombre unifié ; développement de l'écosystème Mobile Money TamTamCash, de MonKapi Merchant et de Ticket Scanner. Publication et suivi sur les stores.",
+      en:"Evolving and maintaining the MonKapi super-app in production; designing KapiMarket and the beauty-salon booking module; building the e-wallet, loyalty program, promo codes and secure OTP sign-up; leading the rollout of a unified light/dark theme across the whole app; building the TamTamCash Mobile Money ecosystem, MonKapi Merchant and Ticket Scanner. Publishing and maintaining releases on the app stores."},
+    'job2-title': {fr:"Développeur d'applications (web et mobile) · Cyberdix / Youaps", en:'Web & Mobile App Developer · Cyberdix / Youaps'},
+    'job2-when': {fr:'Juin 2022 – Janvier 2024', en:'June 2022 – January 2024'},
+    'job2-desc': {fr:"Développement back-end PHP et intégration pour le site Youaps ; conception des applications mobiles You, You Pro et You Commercial en Flutter.",
+      en:'PHP back-end development and integration for the Youaps website; design of the You, You Pro and You Commercial mobile apps in Flutter.'},
+    'job3-title': {fr:"Stagiaire développeur d'applications · Markom Business Solutions", en:'App Developer Intern · Markom Business Solutions'},
+    'job3-when': {fr:'Janvier – Avril 2022', en:'January – April 2022'},
+    'job3-desc': {fr:"Conception d'une plateforme de commerce électronique complète (catalogue, panier, tunnel de commande, gestion du stock et de la facturation), architecturée en couches Repository/Service et testée automatiquement (PHPUnit), avec intégration de la passerelle de paiement PayGate (Mixx, Flooz).",
+      en:'Designed a complete e-commerce platform (catalog, cart, checkout, stock and invoicing management), built on a Repository/Service layered architecture and covered by automated tests (PHPUnit), with PayGate mobile-wallet payment integration (Mixx, Flooz).'},
+
+    'contact-h2': {fr:'Me contacter', en:'Contact me'},
+    'contact-p': {fr:'Disponible en présentiel à Lomé ou à distance, pour une mission freelance ou un poste.', en:'Available on-site in Lomé or remote, for freelance missions or full-time roles.'},
+    'contact-cv': {fr:'CV (PDF)', en:'Resume (PDF)'}
+  };
+
+  var TITLES = {
+    fr:{title:'Saddat IGODO · Développeur Full-Stack', desc:"Portfolio de Mohamed Saddat IGODO, développeur Full-Stack (Flutter, Laravel) basé à Lomé, Togo."},
+    en:{title:'Saddat IGODO · Full-Stack Developer', desc:'Portfolio of Mohamed Saddat IGODO, Full-Stack developer (Flutter, Laravel) based in Lomé, Togo.'}
+  };
+
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    document.title = TITLES[lang].title;
+    var descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta) descMeta.setAttribute('content', TITLES[lang].desc);
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var entry = I18N[el.getAttribute('data-i18n')];
+      if (entry) el.innerHTML = entry[lang];
+    });
+    var btn = document.getElementById('lang-toggle');
+    if (btn) {
+      btn.textContent = lang === 'en' ? 'FR' : 'EN';
+      btn.setAttribute('aria-label', lang === 'en' ? 'Passer en français' : 'Switch to English');
+    }
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+
+  (function(){
+    var saved = 'fr';
+    try { saved = localStorage.getItem('lang') || 'fr'; } catch (e) {}
+    var btn = document.getElementById('lang-toggle');
+    if (btn) {
+      btn.addEventListener('click', function(){
+        applyLang(document.documentElement.lang === 'en' ? 'fr' : 'en');
+      });
+    }
+    if (saved === 'en') applyLang('en');
+  })();
 </script>
 
 </body>
