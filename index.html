@@ -86,7 +86,7 @@
   /* ---------- HERO ---------- */
   header{padding:64px 0 0;}
   .status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);
-    border:1px solid var(--line);background:var(--bg-soft);padding:6px 12px;border-radius:999px;margin-bottom:28px;}
+    border:1px solid var(--line);background:var(--bg-soft);padding:6px 12px;border-radius:9px;margin-bottom:28px;}
   .status .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 3px rgba(73,214,168,.18);}
 
   .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:start;padding-bottom:46px;}
@@ -138,7 +138,7 @@
   /* filters */
   .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
   .filters button{font-family:'Manrope',sans-serif;font-size:13.5px;font-weight:700;color:var(--muted);
-    background:transparent;border:1px solid var(--line);padding:8px 15px;border-radius:999px;cursor:pointer;transition:.15s;}
+    background:transparent;border:1px solid var(--line);padding:8px 15px;border-radius:8px;cursor:pointer;transition:.15s;}
   .filters button:hover{color:var(--ink);border-color:var(--mint);}
   .filters button.active{background:var(--ink);color:var(--bg);border-color:var(--ink);}
 
@@ -212,7 +212,7 @@
     <div class="hero">
       <div>
         <h1>Mohamed Saddat IGODO</h1>
-        <p class="role" data-i18n="hero-role">Développeur full-stack — <b>Flutter</b> en mobile, <b>Laravel</b> en back-end.</p>
+        <p class="role" data-i18n="hero-role">Développeur full-stack : <b>Flutter</b> en mobile, <b>Laravel</b> en back-end.</p>
         <p class="lede" data-i18n="hero-lede">
           Je conçois et fais évoluer des applications en production au Togo : une super-app multi-services,
           deux écosystèmes de paiement mobile et plusieurs plateformes web, du front mobile jusqu'aux API
@@ -249,7 +249,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 data-i18n="work-h2">Réalisations</h2>
-      <p data-i18n="work-p">Apps publiées, écosystèmes fintech et plateformes web — en production, pas des maquettes.</p>
+      <p data-i18n="work-p">Apps publiées, écosystèmes fintech et plateformes web, livrées en production, pas des maquettes.</p>
     </div>
 
     <div class="filters">
@@ -415,7 +415,7 @@
       </div>
       <div class="stack-row" style="--row-color:#e38a42;">
         <div class="layer" data-i18n="layer6">IA</div>
-        <div class="items" data-i18n="items6">Développement assisté par IA avec <b>Claude Code</b> — génération et revue de code, refactoring, débogage, intégré au flux de travail quotidien.</div>
+        <div class="items" data-i18n="items6">Développement assisté par IA avec <b>Claude Code</b> : génération et revue de code, refactoring, débogage, intégré au flux de travail quotidien.</div>
       </div>
       <div class="stack-row" style="--row-color:#3b4a40;">
         <div class="layer" data-i18n="layer7">En montée en compétences</div>
@@ -504,7 +504,7 @@
     'nav-contact': {fr:'Me contacter', en:'Contact me'},
 
     'hero-status': {fr:'Présentiel à Lomé ou en freelance', en:'On-site in Lomé or remote freelance'},
-    'hero-role': {fr:'Développeur full-stack — <b>Flutter</b> en mobile, <b>Laravel</b> en back-end.', en:'Full-stack developer — <b>Flutter</b> on mobile, <b>Laravel</b> on the back end.'},
+    'hero-role': {fr:'Développeur full-stack : <b>Flutter</b> en mobile, <b>Laravel</b> en back-end.', en:'Full-stack developer: <b>Flutter</b> on mobile, <b>Laravel</b> on the back end.'},
     'hero-lede': {
       fr:"Je conçois et fais évoluer des applications en production au Togo : une super-app multi-services, deux écosystèmes de paiement mobile et plusieurs plateformes web, du front mobile jusqu'aux API et à la base de données.",
       en:"I design and evolve production applications in Togo: a multi-service super-app, two mobile payment ecosystems, and several web platforms, from the mobile front end through the API down to the database."
@@ -518,7 +518,7 @@
     'portrait-tag': {fr:'<b>Lomé, Togo</b>Français · Anglais technique', en:'<b>Lomé, Togo</b>French · Technical English'},
 
     'work-h2': {fr:'Réalisations', en:'Work'},
-    'work-p': {fr:'Apps publiées, écosystèmes fintech et plateformes web — en production, pas des maquettes.', en:'Published apps, fintech ecosystems and web platforms — shipped to production, not mockups.'},
+    'work-p': {fr:'Apps publiées, écosystèmes fintech et plateformes web, livrées en production, pas des maquettes.', en:'Published apps, fintech ecosystems and web platforms, shipped to production, not mockups.'},
     'filter-all': {fr:'Tout', en:'All'},
     'filter-mobile': {fr:'Mobile', en:'Mobile'},
     'filter-web': {fr:'Web', en:'Web'},
@@ -587,8 +587,8 @@
     'items5': {fr:'Google Maps et géolocalisation, temps réel (WebSocket), Firebase, notifications push, paiement et QR code.',
       en:'Google Maps and geolocation, real-time (WebSocket), Firebase, push notifications, payments and QR codes.'},
     'layer6': {fr:'IA', en:'AI'},
-    'items6': {fr:"Développement assisté par IA avec <b>Claude Code</b> — génération et revue de code, refactoring, débogage, intégré au flux de travail quotidien.",
-      en:'AI-assisted development with <b>Claude Code</b> — code generation and review, refactoring, debugging, built into the daily workflow.'},
+    'items6': {fr:"Développement assisté par IA avec <b>Claude Code</b> : génération et revue de code, refactoring, débogage, intégré au flux de travail quotidien.",
+      en:'AI-assisted development with <b>Claude Code</b>: code generation and review, refactoring, debugging, built into the daily workflow.'},
     'layer7': {fr:'En montée en compétences', en:'Currently learning'},
 
     'xp-h2': {fr:'Parcours professionnel', en:'Professional experience'},
