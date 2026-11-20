@@ -194,6 +194,7 @@
       <a href="#work" data-i18n="nav-work">Réalisations</a>
       <a href="#stack" data-i18n="nav-stack">Compétences</a>
       <a href="#xp" data-i18n="nav-xp">Parcours</a>
+      <a href="#edu" data-i18n="nav-edu">Formation</a>
       <a class="nav-cta" href="#contact" data-i18n="nav-contact">Me contacter</a>
       <button id="theme-toggle" class="nav-theme" type="button" aria-label="Switch to light theme">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -225,7 +226,7 @@
         <div class="stats">
           <div class="stat"><b data-i18n="stat1-num">~5 ans</b><span data-i18n="stat1-label">d'expérience</span></div>
           <div class="stat"><b>4</b><span data-i18n="stat2-label">apps sur Google Play</span></div>
-          <div class="stat"><b>11</b><span data-i18n="stat3-label">réalisations en production</span></div>
+          <div class="stat"><b>11</b><span data-i18n="stat3-label">réalisations</span></div>
         </div>
       </div>
 
@@ -249,7 +250,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 data-i18n="work-h2">Réalisations</h2>
-      <p data-i18n="work-p">Apps publiées, écosystèmes fintech et plateformes web, livrées en production, pas des maquettes.</p>
+      <p data-i18n="work-p">Apps publiées, écosystèmes fintech, plateformes web et projets personnels.</p>
     </div>
 
     <div class="filters">
@@ -268,8 +269,7 @@
           <div><h3>MonKapi</h3><div class="role" data-i18n="c1-role">Super-app multi-services</div></div>
         </div>
         <p data-i18n="c1-desc">Transport/VTC à tarification dynamique, livraison, e-food, e-commerce, pressing, pharmacie et
-          réservation en salon de beauté, avec carte interactive, suivi en temps réel et thème clair/sombre
-          unifié sur plus de dix modules.</p>
+          réservation en salon de beauté, avec thème clair/sombre unifié sur plus de dix modules.</p>
         <div class="tags"><span>Flutter</span><span>Google Maps</span><span data-i18n="c1-tag3">Temps réel</span></div>
         <a class="link" href="https://play.google.com/store/apps/details?id=com.togo.user" target="_blank" rel="noopener">Google Play</a>
       </div>
@@ -302,8 +302,8 @@
           <div class="icon" style="background:#49d6a8">T</div>
           <div><h3>TamTamCash</h3><div class="role">Mobile Money · 2 apps</div></div>
         </div>
-        <p data-i18n="c4-desc">Écosystème de paiement : app grand public (wallet, transfert P2P, retrait, paiement par QR code,
-          KYC et biométrie) et app agent/agence (cash-in/out, gestion d'agents).</p>
+        <p data-i18n="c4-desc">Écosystème Mobile Money de deux applications (grand public et agent/agence) : intégration
+          d'API de paiement, transfert P2P, cash-in/cash-out, paiement par QR code, KYC.</p>
         <div class="tags"><span>Flutter</span><span data-i18n="c4-tag2">API de paiement</span><span>QR code</span></div>
         <a class="link muted" data-i18n="c4-link">Sur les stores</a>
       </div>
@@ -333,8 +333,7 @@
           <div class="icon" style="background:#9c6ae0">S</div>
           <div><h3>Ticket Scanner</h3><div class="role" data-i18n="c7-role">Contrôle d'accès événementiel</div></div>
         </div>
-        <p data-i18n="c7-desc">Validation de billets par QR code en temps réel, détection des doubles entrées et statistiques
-          de scan pour le staff d'événements.</p>
+        <p data-i18n="c7-desc">Contrôle d'accès événementiel par validation de billets en QR code, en temps réel.</p>
         <div class="tags"><span>Flutter</span><span>QR code</span></div>
         <a class="link muted" data-i18n="c7-link">Application interne</a>
       </div>
@@ -405,6 +404,10 @@
         <div class="layer" data-i18n="layer3">Données</div>
         <div class="items">MySQL, MariaDB.</div>
       </div>
+      <div class="stack-row" style="--row-color:#c48a3f;">
+        <div class="layer">Web</div>
+        <div class="items">JavaScript, HTML, CSS, Blade.</div>
+      </div>
       <div class="stack-row" style="--row-color:#9c6ae0;">
         <div class="layer">DevOps &amp; Cloud</div>
         <div class="items">Docker, Google Cloud Platform, Git, GitHub.</div>
@@ -443,15 +446,39 @@
       </div>
       <div class="item">
         <div class="head"><h3 data-i18n="job2-title">Développeur d'applications (web et mobile) · Cyberdix / Youaps</h3><span class="when" data-i18n="job2-when">Juin 2022 – Janvier 2024</span></div>
-        <p data-i18n="job2-desc">Développement back-end PHP et intégration pour le site Youaps ; conception des applications
-          mobiles You, You Pro et You Commercial en Flutter.</p>
+        <p data-i18n="job2-desc">Développement back-end PHP et intégration : site web Youaps, application web de gestion de
+          données et site d'inscription des partenaires ; conception des applications mobiles You, You Pro
+          et You Commercial en Flutter.</p>
       </div>
       <div class="item">
         <div class="head"><h3 data-i18n="job3-title">Stagiaire développeur d'applications · Markom Business Solutions</h3><span class="when" data-i18n="job3-when">Janvier – Avril 2022</span></div>
         <p data-i18n="job3-desc">Conception d'une plateforme de commerce électronique complète (catalogue, panier, tunnel de
           commande, gestion du stock et de la facturation), architecturée en couches Repository/Service et
           testée automatiquement (PHPUnit), avec intégration de la passerelle de paiement PayGate
-          (Mixx, Flooz).</p>
+          (Mixx, Flooz). Mise à jour du site officiel markom-bs.com (WordPress).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FORMATION ===================== -->
+<section id="edu">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-i18n="edu-h2">Formation</h2>
+    </div>
+    <div class="xp">
+      <div class="item">
+        <div class="head"><h3 data-i18n="edu1-title">Licence Professionnelle en Génie Logiciel</h3><span class="when">2020 – 2021</span></div>
+        <p>Institut Polytechnique DEFITECH, Lomé</p>
+      </div>
+      <div class="item">
+        <div class="head"><h3 data-i18n="edu2-title">BTS Développeur d'applications</h3><span class="when">2018 – 2020</span></div>
+        <p>Institut Polytechnique DEFITECH, Lomé</p>
+      </div>
+      <div class="item">
+        <div class="head"><h3 data-i18n="edu3-title">Baccalauréat série D</h3><span class="when">2015 – 2018</span></div>
+        <p>Collège Protestant Agbalépédo, Lomé</p>
       </div>
     </div>
   </div>
@@ -462,7 +489,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 data-i18n="contact-h2">Me contacter</h2>
-      <p data-i18n="contact-p">Disponible en présentiel à Lomé ou à distance, pour une mission freelance ou un poste.</p>
+      <p data-i18n="contact-p">Disponible pour un poste en présentiel à Lomé ou une mission en freelance.</p>
     </div>
     <div class="contact-row">
       <a class="btn btn-primary" href="mailto:saddatigd@gmail.com">saddatigd@gmail.com</a>
@@ -476,7 +503,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Mohamed Saddat IGODO · Lomé, Togo</span>
-    <span>github.com/saddat12</span>
+    <a href="https://github.com/saddat12" target="_blank" rel="noopener">github.com/saddat12</a>
   </div>
 </footer>
 
@@ -501,6 +528,7 @@
     'nav-work': {fr:'Réalisations', en:'Work'},
     'nav-stack': {fr:'Compétences', en:'Skills'},
     'nav-xp': {fr:'Parcours', en:'Experience'},
+    'nav-edu': {fr:'Formation', en:'Education'},
     'nav-contact': {fr:'Me contacter', en:'Contact me'},
 
     'hero-status': {fr:'Présentiel à Lomé ou en freelance', en:'On-site in Lomé or remote freelance'},
@@ -514,11 +542,11 @@
     'stat1-num': {fr:'~5 ans', en:'~5 yrs'},
     'stat1-label': {fr:"d'expérience", en:'experience'},
     'stat2-label': {fr:'apps sur Google Play', en:'apps on Google Play'},
-    'stat3-label': {fr:'réalisations en production', en:'shipped to production'},
+    'stat3-label': {fr:'réalisations', en:'projects delivered'},
     'portrait-tag': {fr:'<b>Lomé, Togo</b>Français · Anglais technique', en:'<b>Lomé, Togo</b>French · Technical English'},
 
     'work-h2': {fr:'Réalisations', en:'Work'},
-    'work-p': {fr:'Apps publiées, écosystèmes fintech et plateformes web, livrées en production, pas des maquettes.', en:'Published apps, fintech ecosystems and web platforms, shipped to production, not mockups.'},
+    'work-p': {fr:'Apps publiées, écosystèmes fintech, plateformes web et projets personnels.', en:'Published apps, fintech ecosystems, web platforms and personal projects.'},
     'filter-all': {fr:'Tout', en:'All'},
     'filter-mobile': {fr:'Mobile', en:'Mobile'},
     'filter-web': {fr:'Web', en:'Web'},
@@ -526,8 +554,8 @@
     'filter-education': {fr:'Éducation', en:'Education'},
 
     'c1-role': {fr:'Super-app multi-services', en:'Multi-service super-app'},
-    'c1-desc': {fr:"Transport/VTC à tarification dynamique, livraison, e-food, e-commerce, pressing, pharmacie et réservation en salon de beauté, avec carte interactive, suivi en temps réel et thème clair/sombre unifié sur plus de dix modules.",
-      en:"Ride-hailing with dynamic pricing, delivery, e-food, e-commerce, laundry, pharmacy and beauty-salon booking, with an interactive map, live tracking and a unified light/dark theme across more than ten modules."},
+    'c1-desc': {fr:"Transport/VTC à tarification dynamique, livraison, e-food, e-commerce, pressing, pharmacie et réservation en salon de beauté, avec thème clair/sombre unifié sur plus de dix modules.",
+      en:"Ride-hailing with dynamic pricing, delivery, e-food, e-commerce, laundry, pharmacy and beauty-salon booking, with a unified light/dark theme across more than ten modules."},
     'c1-tag3': {fr:'Temps réel', en:'Real-time'},
 
     'c2-role': {fr:'Petites annonces', en:'Classifieds'},
@@ -540,8 +568,8 @@
     'c3-desc': {fr:"Application dédiée aux commerçants et prestataires : catalogue (produits, prestations, variantes, remises, stock), agenda des rendez-vous, assignation des livraisons, tableau de bord des ventes, interface bilingue français/anglais.",
       en:"App built for merchants and service providers: catalog (products, services, variants, discounts, stock), appointment calendar, delivery assignment, sales dashboard, and a bilingual French/English interface."},
 
-    'c4-desc': {fr:"Écosystème de paiement : app grand public (wallet, transfert P2P, retrait, paiement par QR code, KYC et biométrie) et app agent/agence (cash-in/out, gestion d'agents).",
-      en:"Payment ecosystem: a consumer app (wallet, P2P transfers, withdrawals, QR code payments, KYC and biometrics) and an agent/branch app (cash-in/out, agent management)."},
+    'c4-desc': {fr:"Écosystème Mobile Money de deux applications (grand public et agent/agence) : intégration d'API de paiement, transfert P2P, cash-in/cash-out, paiement par QR code, KYC.",
+      en:"Two-app Mobile Money ecosystem (consumer and agent/branch): payment API integration, P2P transfers, cash-in/cash-out, QR code payments, KYC."},
     'c4-tag2': {fr:'API de paiement', en:'Payment API'},
     'c4-link': {fr:'Sur les stores', en:'On the app stores'},
 
@@ -554,8 +582,8 @@
       en:'App built for service providers on the Youaps platform.'},
 
     'c7-role': {fr:"Contrôle d'accès événementiel", en:'Event access control'},
-    'c7-desc': {fr:'Validation de billets par QR code en temps réel, détection des doubles entrées et statistiques de scan pour le staff d\'événements.',
-      en:'Real-time QR code ticket validation, duplicate-entry detection and scan stats for event staff.'},
+    'c7-desc': {fr:"Contrôle d'accès événementiel par validation de billets en QR code, en temps réel.",
+      en:'Real-time event access control through QR code ticket validation.'},
     'c7-link': {fr:'Application interne', en:'Internal app'},
 
     'c8-role': {fr:'Plateforme de tournois', en:'Tournament platform'},
@@ -598,15 +626,20 @@
       en:"Evolving and maintaining the MonKapi super-app in production; designing KapiMarket and the beauty-salon booking module; building the e-wallet, loyalty program, promo codes and secure OTP sign-up; leading the rollout of a unified light/dark theme across the whole app; building the TamTamCash Mobile Money ecosystem, MonKapi Merchant and Ticket Scanner. Publishing and maintaining releases on the app stores."},
     'job2-title': {fr:"Développeur d'applications (web et mobile) · Cyberdix / Youaps", en:'Web & Mobile App Developer · Cyberdix / Youaps'},
     'job2-when': {fr:'Juin 2022 – Janvier 2024', en:'June 2022 – January 2024'},
-    'job2-desc': {fr:"Développement back-end PHP et intégration pour le site Youaps ; conception des applications mobiles You, You Pro et You Commercial en Flutter.",
-      en:'PHP back-end development and integration for the Youaps website; design of the You, You Pro and You Commercial mobile apps in Flutter.'},
+    'job2-desc': {fr:"Développement back-end PHP et intégration : site web Youaps, application web de gestion de données et site d'inscription des partenaires ; conception des applications mobiles You, You Pro et You Commercial en Flutter.",
+      en:'PHP back-end development and integration: the Youaps website, a data-management web app and a partner sign-up site; design of the You, You Pro and You Commercial mobile apps in Flutter.'},
     'job3-title': {fr:"Stagiaire développeur d'applications · Markom Business Solutions", en:'App Developer Intern · Markom Business Solutions'},
     'job3-when': {fr:'Janvier – Avril 2022', en:'January – April 2022'},
-    'job3-desc': {fr:"Conception d'une plateforme de commerce électronique complète (catalogue, panier, tunnel de commande, gestion du stock et de la facturation), architecturée en couches Repository/Service et testée automatiquement (PHPUnit), avec intégration de la passerelle de paiement PayGate (Mixx, Flooz).",
-      en:'Designed a complete e-commerce platform (catalog, cart, checkout, stock and invoicing management), built on a Repository/Service layered architecture and covered by automated tests (PHPUnit), with PayGate mobile-wallet payment integration (Mixx, Flooz).'},
+    'job3-desc': {fr:"Conception d'une plateforme de commerce électronique complète (catalogue, panier, tunnel de commande, gestion du stock et de la facturation), architecturée en couches Repository/Service et testée automatiquement (PHPUnit), avec intégration de la passerelle de paiement PayGate (Mixx, Flooz). Mise à jour du site officiel markom-bs.com (WordPress).",
+      en:'Designed a complete e-commerce platform (catalog, cart, checkout, stock and invoicing management), built on a Repository/Service layered architecture and covered by automated tests (PHPUnit), with PayGate mobile-wallet payment integration (Mixx, Flooz). Updated the company website markom-bs.com (WordPress).'},
+
+    'edu-h2': {fr:'Formation', en:'Education'},
+    'edu1-title': {fr:'Licence Professionnelle en Génie Logiciel', en:"Professional Bachelor's Degree in Software Engineering"},
+    'edu2-title': {fr:"BTS Développeur d'applications", en:'BTS (Higher Technician Certificate) in Application Development'},
+    'edu3-title': {fr:'Baccalauréat série D', en:'Baccalauréat, Science Track (série D)'},
 
     'contact-h2': {fr:'Me contacter', en:'Contact me'},
-    'contact-p': {fr:'Disponible en présentiel à Lomé ou à distance, pour une mission freelance ou un poste.', en:'Available on-site in Lomé or remote, for freelance missions or full-time roles.'},
+    'contact-p': {fr:'Disponible pour un poste en présentiel à Lomé ou une mission en freelance.', en:'Available for an on-site role in Lomé or remote freelance work.'},
     'contact-cv': {fr:'CV (PDF)', en:'Resume (PDF)'}
   };
 
