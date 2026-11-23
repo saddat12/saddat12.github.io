@@ -13,6 +13,10 @@
 <meta property="og:url" content="https://saddat12.github.io/">
 <meta property="og:site_name" content="Saddat IGODO · Portfolio">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="alternate" hreflang="fr" href="https://saddat12.github.io/">
+<link rel="alternate" hreflang="en" href="https://saddat12.github.io/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://saddat12.github.io/">
 <meta property="og:title" content="Mohamed Saddat IGODO · Développeur Full-Stack Flutter &amp; Laravel">
 <meta property="og:description" content="Développeur full-stack à Lomé (Togo) : Flutter en mobile, Laravel en back-end. Apps en production, Mobile Money, API REST. Présentiel à Lomé ou freelance.">
 <meta property="og:image" content="https://saddat12.github.io/photo.jpg">
@@ -244,7 +248,7 @@
 <!-- ===================== HERO ===================== -->
 <header>
   <div class="wrap">
-    <span class="status"><span class="dot"></span> <span data-i18n="hero-status">Présentiel à Lomé ou en freelance</span></span>
+    <span class="status"><span class="dot"></span> <span data-i18n="hero-status">Télétravail, freelance ou présentiel à Lomé</span></span>
 
     <div class="hero">
       <div>
@@ -262,7 +266,7 @@
         <div class="stats">
           <div class="stat"><b data-i18n="stat1-num">~5 ans</b><span data-i18n="stat1-label">d'expérience</span></div>
           <div class="stat"><b>4</b><span data-i18n="stat2-label">apps sur Google Play</span></div>
-          <div class="stat"><b>11</b><span data-i18n="stat3-label">réalisations</span></div>
+          <div class="stat"><b data-i18n="stat3-num">6 500+</b><span data-i18n="stat3-label">téléchargements</span></div>
         </div>
       </div>
 
@@ -525,7 +529,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 data-i18n="contact-h2">Me contacter</h2>
-      <p data-i18n="contact-p">Disponible pour un poste en présentiel à Lomé ou une mission en freelance.</p>
+      <p data-i18n="contact-p">Disponible pour un poste en télétravail, une mission en freelance ou un poste en présentiel à Lomé.</p>
     </div>
     <div class="contact-row">
       <a class="btn btn-primary" href="mailto:saddatigd@gmail.com">saddatigd@gmail.com</a>
@@ -567,7 +571,7 @@
     'nav-edu': {fr:'Formation', en:'Education'},
     'nav-contact': {fr:'Me contacter', en:'Contact me'},
 
-    'hero-status': {fr:'Présentiel à Lomé ou en freelance', en:'On-site in Lomé or remote freelance'},
+    'hero-status': {fr:'Télétravail, freelance ou présentiel à Lomé', en:'Open to remote roles worldwide, freelance or on-site in Lomé'},
     'hero-role': {fr:'Développeur full-stack : <b>Flutter</b> en mobile, <b>Laravel</b> en back-end.', en:'Full-stack developer: <b>Flutter</b> on mobile, <b>Laravel</b> on the back end.'},
     'hero-lede': {
       fr:"Je conçois et fais évoluer des applications en production au Togo : une super-app multi-services, deux écosystèmes de paiement mobile et plusieurs plateformes web, du front mobile jusqu'aux API et à la base de données.",
@@ -578,7 +582,8 @@
     'stat1-num': {fr:'~5 ans', en:'~5 yrs'},
     'stat1-label': {fr:"d'expérience", en:'experience'},
     'stat2-label': {fr:'apps sur Google Play', en:'apps on Google Play'},
-    'stat3-label': {fr:'réalisations', en:'projects delivered'},
+    'stat3-num': {fr:'6 500+', en:'6,500+'},
+    'stat3-label': {fr:'téléchargements', en:'downloads'},
     'portrait-tag': {fr:'<b>Lomé, Togo</b>Français · Anglais technique', en:'<b>Lomé, Togo</b>French · Technical English'},
 
     'work-h2': {fr:'Réalisations', en:'Work'},
@@ -675,13 +680,13 @@
     'edu3-title': {fr:'Baccalauréat série D', en:'Baccalauréat, Science Track (série D)'},
 
     'contact-h2': {fr:'Me contacter', en:'Contact me'},
-    'contact-p': {fr:'Disponible pour un poste en présentiel à Lomé ou une mission en freelance.', en:'Available for an on-site role in Lomé or remote freelance work.'},
+    'contact-p': {fr:'Disponible pour un poste en télétravail, une mission en freelance ou un poste en présentiel à Lomé.', en:'Available for remote full-time roles (UTC+0, overlaps with Europe), freelance contracts, or on-site work in Lomé.'},
     'contact-cv': {fr:'CV (PDF)', en:'Resume (PDF)'}
   };
 
   var TITLES = {
-    fr:{title:'Saddat IGODO · Développeur Full-Stack', desc:"Portfolio de Mohamed Saddat IGODO, développeur Full-Stack (Flutter, Laravel) basé à Lomé, Togo."},
-    en:{title:'Saddat IGODO · Full-Stack Developer', desc:'Portfolio of Mohamed Saddat IGODO, Full-Stack developer (Flutter, Laravel) based in Lomé, Togo.'}
+    fr:{title:'Mohamed Saddat IGODO · Développeur Full-Stack Flutter & Laravel à Lomé, Togo', desc:"Mohamed Saddat IGODO, développeur full-stack à Lomé (Togo) : près de 5 ans d'expérience en Flutter (mobile) et Laravel/PHP (back-end). Télétravail, freelance ou présentiel à Lomé."},
+    en:{title:'Mohamed Saddat IGODO · Full-Stack Flutter & Laravel Developer (Remote, Togo)', desc:'Mohamed Saddat IGODO, full-stack developer based in Lomé, Togo: nearly 5 years of Flutter (mobile) and Laravel/PHP (back-end). Open to remote roles worldwide and freelance contracts.'}
   };
 
   function applyLang(lang){
@@ -706,7 +711,14 @@
 
   (function(){
     var saved = 'fr';
-    try { saved = localStorage.getItem('lang') || 'fr'; } catch (e) {}
+    try {
+      var param = new URLSearchParams(window.location.search).get('lang');
+      var stored = localStorage.getItem('lang');
+      var nav = (navigator.language || 'fr').toLowerCase();
+      if (param === 'en' || param === 'fr') saved = param;
+      else if (stored === 'en' || stored === 'fr') saved = stored;
+      else saved = nav.indexOf('fr') === 0 ? 'fr' : 'en';
+    } catch (e) {}
     var btn = document.getElementById('lang-toggle');
     if (btn) {
       btn.addEventListener('click', function(){
